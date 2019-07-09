@@ -1,15 +1,22 @@
 #!/bin/sh
 
+# TODO: 需要根据项目实际情况替换端口号、标签名和项目名
+
+port=4004
 tag="latest"
 container_name="projectName"
 image_name="jweboy/${container_name}:${tag}"
-port=4004
 
 # pull image
 docker pull ${image_name}
 
+# cleanup container if exited but stoped
+if [ "$(docker ps -a -f status=exited -f name=${container_name})" ]; then
+    docker rm -f ${container_name}
+fi
+
 # cleanup
-if [ "$(docker ps -a | grep projectName)" ]; then
+if [ "$(docker ps -a | grep ${container_name})" ]; then
     docker stop ${container_name}
 fi
 
