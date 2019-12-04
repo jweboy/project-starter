@@ -1,3 +1,9 @@
+// /*
+//  * @Author: jweboy
+//  * @Date: 2019-12-03 16:18:35
+//  * @LastEditors: jweboy
+//  * @LastEditTime: 2019-12-04 10:27:30
+//  */
 // const { spawn } = require('child_process');
 // const EventEmitter = require('events');
 
@@ -19,7 +25,9 @@
 //   io.on('connection', (socket) => {});
 // });
 
-// const test = (bool) => ({ bool });
+// const test = (bool) => ({
+//   bool,
+// });
 // const ary = [1, 2, 3];
 
 // function HelloWorld({ greeting = 'hello', greeted = 'World', silent = false, onMouseOver }) {
@@ -31,3 +39,11 @@
 // const set = new Set();
 // const b = { foo: 'test' };
 // const a = { ...b };
+
+// const p = {
+//   get name() {
+//     // no returns.
+//   },
+// };
+
+// console.log(p);

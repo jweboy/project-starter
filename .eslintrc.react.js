@@ -2,10 +2,10 @@
  * @Author: jweboy
  * @Date: 2019-12-03 16:18:35
  * @LastEditors: jweboy
- * @LastEditTime: 2019-12-03 18:27:35
+ * @LastEditTime: 2019-12-04 10:43:27
  */
 /**
- * @name react rules 模板
+ * @name react代码规则模板
  * @description 规则数值含义
  * "off" 或 0 - 关闭规则
  * "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
@@ -20,7 +20,9 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'airbnb-base', // `airbnb` 基准规则
     'plugin:react/recommended', // `eslint-plugin-react` 插件
+    'prettier',
   ],
   parser: 'babel-eslint', // 解析器
   parserOptions: {
@@ -35,6 +37,8 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    'prettier/prettier': ['error'], // 遵循 `.prettirc.js` 相关规则
+    'no-console': 1,
     /**
      * @description react 部分规则
      */
